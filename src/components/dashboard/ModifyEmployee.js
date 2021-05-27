@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import _ from 'lodash';
 import ModalHeader from '../common/ModalHeader';
-import axios from 'axios';
 import '../common/Modal.scss';
 
 const ModifyEmployee = (props) => {
     const [employee, setEmployee] = useState({});
 
     useEffect(() => {
-        _.map(props.updateEmployee, emp => {
-            setEmployee(emp)
-        })
+        async function fetchData() {
+            const updateEmployee = props.updateEmployee
+            _.map(updateEmployee, emp => {
+                setEmployee(emp)
+            })
+        }
+        fetchData();
     }, []);
 
     const handleChange = (e) => {

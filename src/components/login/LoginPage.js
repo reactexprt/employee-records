@@ -30,7 +30,7 @@ const LoginPage = () => {
             password: 'password'
         }
 
-        if ((emailInput == hardcodedCred.email) && (passwordInput == hardcodedCred.password)) {
+        if ((emailInput === hardcodedCred.email) && (passwordInput === hardcodedCred.password)) {
             const token = '123456abcdef';
             sessionStorage.setItem('auth-token', token);
             history.push('/sb');

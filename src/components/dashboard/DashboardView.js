@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import axios from 'axios';
 import _ from 'lodash';
-import { Dimmer, Loader, Segment, Image } from 'semantic-ui-react'
+import { Loader } from 'semantic-ui-react'
 
 
 import NavigationBar from '../navigationBar/NavigationBar';
@@ -15,18 +14,21 @@ const Dashboard = () => {
     const [employeeID, setEmployeeID] = useState('');
     // const products = useSelector(state => state.auth.availableProducts);
 
-    useEffect(async () => {
-        const response = await axios.get('https://api.github.com/users')
+    useEffect(() => {
+        async function fetchData() {
+            const response = await axios.get('https://api.github.com/users')
 
-        const employeeName = _.map(response.data, eachEmployee => {
-            return eachEmployee.login
-        })
-        const userPersonalInfo = []
-        for (const employee of employeeName) {
-            const user = await axios.get(`https://api.github.com/users/${employee}`)
-            userPersonalInfo.push(user.data)
+            const employeeName = _.map(response.data, eachEmployee => {
+                return eachEmployee.login
+            })
+            const userPersonalInfo = []
+            for (const employee of employeeName) {
+                const user = await axios.get(`https://api.github.com/users/${employee}`)
+                userPersonalInfo.push(user.data)
+            }
+            setEmployeeDetails(userPersonalInfo);
         }
-        setEmployeeDetails(userPersonalInfo);
+        fetchData();
     }, []);
 
     const openEmployeeDetailsModal = id => {
@@ -102,7 +104,7 @@ const Dashboard = () => {
                 listOfResults.push(
                     <div className="products" key={item.id}>
                         <div className="image-container">
-                            <img className="image" src={item.avatar_url} />
+                            <img className="image" src={item.avatar_url} alt='Profile' />
                         </div>
                         <div className="details">
                             <h2 className="title">{item.name}</h2>

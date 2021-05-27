@@ -42,7 +42,7 @@ const NavigationBar = props => {
                         <Dropdown.Item text='Werner' style={{ fontSize: "15px", textAlign: 'center', fontWeight: 'bold' }} />
                         <div className="profile-image">
                             <Dropdown.Item>
-                                <img src='https://avatars.githubusercontent.com/u/1?v=4' />
+                                <img src='https://avatars.githubusercontent.com/u/1?v=4' alt='Profile' />
                             </Dropdown.Item>
                         </div>
                     </Dropdown.Menu>
