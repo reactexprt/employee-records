@@ -1,0 +1,118 @@
+#navigation-bar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f48338;
+    padding: 0 50px;
+    height: 60px;
+    z-index: 999;
+
+    // /* Disables Highlighting Text and Images */
+    // -moz-user-select: none;
+    // -ms-user-select: none;
+    // -khtml-ser-select: none;
+    // -webkit-user-select: none;
+    // -webkit-touch-callout: none;
+
+    #logo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+    }
+
+    .error-container {
+        display: flex;
+        position: fixed;
+        top: 65px;
+        left: 50%;
+        color: #fff;
+        background-color: #fb3737;
+        border: 5px solid darken(#fb3737, 30%);
+        padding: 10px 15px;
+        border-radius: 20px;
+        margin-left: -300px;
+    }
+}
+
+h1.logo-text {
+    color: #fff;
+    margin: 0 70px 0 0;
+    font-weight: 400;
+
+    &:after {
+        font-size: 12px;
+        position: absolute;
+        top: 3px;
+        margin-left: 5px;
+    }
+}
+
+#navigation-items {
+    display: flex;
+    height: 100%;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        padding: 0 15px;
+        font-size: 20px;
+        height: 100%;
+    }
+
+    a:hover {
+        background-color: #c86a30;
+        color: #fff;
+    }
+
+    .home-icon {
+        height: 0.8rem;
+        margin-right: 0.3em;
+    }
+}
+
+#action-buttons {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    img {
+        height: 40px;
+        margin-right: 0px;
+        backface-visibility: hidden;
+        margin-right: 20px;
+
+        // &:last-child {
+        //     margin-right: 0;
+        // }
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+}
+
+
+.profile-image {
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+
+    img {
+        border-radius: 50%;
+    }
+}

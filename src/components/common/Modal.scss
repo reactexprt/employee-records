@@ -1,0 +1,99 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.prompt-modal-content-container {
+    min-width: 600px;
+    width: unset;
+}
+
+.modal-content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    outline: none;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    min-width: 1000px;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    #editor-metadata-form {
+        display: flex;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+            "Helvetica Neue", sans-serif;
+        font-size: 15px;
+        flex-direction: column;
+        padding: 15px;
+        margin: 20px 50px;
+        // overflow-y: auto;
+        min-height: 500px;
+
+        label {
+            margin: 10px;
+
+            input {
+                margin-top: 10px;
+                width: 100%;
+                border: 0.5px solid rgba(0, 0, 0, 0.5);
+                height: 20px;
+            }
+            .modify-item-image {
+                margin-top: 5px;
+                width: 60px;
+            }
+        }
+
+        .submit-button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            vertical-align: middle;
+            margin-top: 30px;
+
+            button {
+                font-weight: bold;
+                font-size: 15px;
+                width: 30%;
+                background-color: #f48338;
+                border: none;
+                border-radius: 5px;
+                color: #fff;
+                padding: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #modal-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        vertical-align: middle;
+        background-color: #f48338;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+
+        #modal-header-text {
+            display: block;
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+}
+
+.modal-content-container::-webkit-scrollbar {
+    display: none;
+}
