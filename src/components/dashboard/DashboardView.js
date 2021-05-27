@@ -12,7 +12,6 @@ const Dashboard = () => {
     const [employeeDetails, setEmployeeDetails] = useState([]);
     const [updateEmployeeModal, setUpdateEmployeeModal] = useState(false);
     const [employeeID, setEmployeeID] = useState('');
-    // const products = useSelector(state => state.auth.availableProducts);
 
     useEffect(() => {
         async function fetchData() {
@@ -53,7 +52,6 @@ const Dashboard = () => {
         const updateList = employeeDetails.filter(data => data.id !== items.id)
         _.map(employeeDetails, item => {
             if (item.id === items.id) {
-                // const finalList = updateList.concat(items);
                 const finalList = [...newEmployeeDetails, ...updateList]
                 setEmployeeDetails(finalList);
             }
@@ -108,7 +106,6 @@ const Dashboard = () => {
                         </div>
                         <div className="details">
                             <h2 className="title">{item.name}</h2>
-                            {/* <div className="price">Followers: {item.followers}</div> */}
                         </div>
                         <p>{item.description}</p>
                         <div className="actions">
